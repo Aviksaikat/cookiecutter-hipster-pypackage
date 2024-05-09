@@ -79,7 +79,7 @@ ignore = [
 [tool.pytest.ini_options]
 addopts = "--cov={{ cookiecutter.package_name }}/ --cov-report=term-missing"
 {% if cookiecutter.asyncio == "Y" -%}
-asyncio_mode = "strict"
+  asyncio_mode = "strict"
 {%- endif %}
 
 
@@ -87,7 +87,7 @@ asyncio_mode = "strict"
 test = [
   "pytest>=8.2.0",
   {% if cookiecutter.codecov == 'y' -%}
-  "pytest-cov>=5.0.0"
+    "pytest-cov>=5.0.0"
   {% endif -%}
   {% if cookiecutter.asyncio == "Y" -%}
     "pytest-asyncio",
@@ -110,7 +110,7 @@ docs = [
 {%- endif %}
 
 
-[tool.hatch.envs.default.scripts]
+[tool.pdm.scripts]
 test = "pytest"
 test-cov-xml = "pytest --cov-report=xml"
 lint = [
@@ -134,5 +134,3 @@ includes = ["{{cookiecutter.project_slug}}"]
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
-
-

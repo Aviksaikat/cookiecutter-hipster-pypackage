@@ -106,3 +106,10 @@ ENV/
 
 # OS files
 .DS_Store
+.vscode/
+
+# pdm 
+.pdm-python
+
+# ruff
+.ruff_cache/*
